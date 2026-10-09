@@ -32,7 +32,7 @@ The first load needs an internet connection for the Three.js ES module and web f
 
 ## Implemented
 
-- Third-person follow camera with smoothing and a ground-height safety clamp.
+- Third-person follow camera with smoothing, ground-height safety clamp, and raycast-based obstacle avoidance.
 - Controllable survivor with procedural walk/run movement, sprint stamina and jumping.
 - Separate invisible player collision volume and simple obstacle collision.
 - Low-poly outdoor environment with abandoned house, shed, road, cover and trees.
@@ -50,6 +50,12 @@ The first load needs an internet connection for the Three.js ES module and web f
 ## GitHub Pages
 
 Open **Settings → Pages** and select **GitHub Actions** as the deployment source if it is not already selected. The workflow at `.github/workflows/pages.yml` publishes the repository root.
+
+## Known prototype limits
+
+- The survivor is procedural geometry; a rigged GLB and genuine skeletal locomotion clips are not yet integrated.
+- Player obstacle handling currently uses axis-separated AABB checks rather than a full capsule-cast physics controller.
+- The camera avoids the current solid box colliders, but complex foliage and non-solid scenery do not block the view.
 
 ## Planned next
 
